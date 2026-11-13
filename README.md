@@ -6,11 +6,44 @@ Product Guru is a Codex skill for drafting and editing tickets, acceptance crite
 
 This is an initial draft. It has not yet been evaluated across models or tested with working product teams.
 
-## Use it
+## Install in Codex
 
-Copy `skills/product-guru` into your personal Codex skills directory, `~/.agents/skills/`, or your repository's `.agents/skills/` directory. Copy the whole folder so that the examples remain available.
+### With the skill installer
+
+Send this prompt in Codex:
+
+```text
+Use $skill-installer to install the skill from https://github.com/0x54392655/product-guru/tree/main/skills/product-guru
+```
+
+### Manual installation
+
+On macOS or Linux, clone this repository and open its directory:
+
+```sh
+git clone https://github.com/0x54392655/product-guru.git
+cd product-guru
+```
+
+To make the skill available across your projects:
+
+```sh
+mkdir -p "$HOME/.agents/skills"
+cp -R skills/product-guru "$HOME/.agents/skills/"
+```
+
+For installation in one project instead, replace `/path/to/your-project` with that project's root:
+
+```sh
+mkdir -p "/path/to/your-project/.agents/skills"
+cp -R skills/product-guru "/path/to/your-project/.agents/skills/"
+```
+
+Copy the whole skill folder so that its metadata and examples remain available.
 
 Codex detects skill changes automatically. Restart Codex if the skill does not appear. See the [official skill documentation](https://learn.chatgpt.com/docs/build-skills) for discovery and installation locations.
+
+## Use it
 
 Example requests:
 
