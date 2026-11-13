@@ -63,6 +63,26 @@ Use $product-guru to explain this proposal to a product manager: ...
 
 The skill can also be selected automatically when its description matches a writing task. It does not need a connector, script, or API key. It drafts text; it does not authorize publishing tickets or changing external systems.
 
+### Use with connected ticket systems
+
+Product Guru applies to ticket writing through Jira, YouTrack, Linear, GitHub Issues, or any other ticket system connected to Codex through MCP. It uses the tools already available in your setup; it does not install or configure a tracker connection.
+
+For example, ask Codex to "Rewrite the description and acceptance criteria of PROJ-123 in YouTrack" or "Create a Jira bug report from these notes." The skill uses the same clarity rules and follows the tracker's fields and your team's templates. It writes to the tracker when you request a create or update action; a draft request returns text.
+
+Connecting a tracker alone does not guarantee skill selection. Codex chooses skills by matching the task to their descriptions. To require Product Guru for ticket writing, add this rule to `~/.codex/AGENTS.md` for all your projects, or to a project's `AGENTS.md`:
+
+```markdown
+## Ticket writing
+
+Always use $product-guru for all ticket-writing work, including ticket titles,
+descriptions, bug reports, user stories, acceptance criteria, and explanatory
+ticket comments. Read the skill before writing, even when it is not named in
+the request. This applies to drafts in chat or files and to creating or editing
+ticket content through any connected ticket system or MCP tool.
+```
+
+Install the skill separately wherever this rule applies. The rule governs writing ticket content; ticket lookup, status-only updates, and implementing a ticket do not require the writing skill. See the [official Codex customization guidance](https://learn.chatgpt.com/docs/customization/overview) for how skills, MCP, and `AGENTS.md` work together.
+
 ## What it changes
 
 - Long sentences become focused sentences with named actors.

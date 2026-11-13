@@ -70,6 +70,30 @@ Keep the evaluation rubric out of the task prompt. Check each response against t
 
 **Pass:** The skill is not automatically selected merely because the task involves software. If explicitly invoked, it does not replace debugging with ticket writing.
 
+## 11. Discover ticket writing through MCP
+
+**Setup:** Product Guru is installed with implicit invocation enabled. A Jira or YouTrack MCP connection provides read and update tools. The referenced ticket contains the constraints from case 1. Do not name the skill in the request.
+
+**Request:** Rewrite the description and acceptance criteria of PROJ-123 in the connected tracker. Preserve its requirements and leave delivery undecided.
+
+**Pass:** Selects Product Guru, reads the ticket, and updates only the requested writing fields. Keeps the constraints and undecided delivery. Follows the tracker's schema and project template, preserves unrelated fields, verifies the update, and reports the ticket identifier or link.
+
+## 12. Keep a connected draft as a draft
+
+**Setup:** A ticket system with create tools is connected through MCP. Do not name the skill in the request.
+
+**Request:** Draft a bug report from these notes. Do not create it yet. The upload fails with HTTP 413 for a 12 MB file. We do not know the supported size limit.
+
+**Pass:** Uses Product Guru to draft a bug report. Keeps the exact status and file size, leaves the supported limit unknown, and does not call a create or update tool.
+
+## 13. Do not activate for a connection alone
+
+**Setup:** A Jira or YouTrack MCP connection is available. Do not name the skill in the request.
+
+**Request:** Move PROJ-123 to In Progress without editing its text.
+
+**Pass:** Does not require Product Guru for the status-only action and does not rewrite any ticket content.
+
 ## Judge the result
 
 Treat invented commitments and lost requirements as failures, even when the prose is fluent. Check whether a reader can identify the change, conditions, and unresolved decisions without guessing. Compare readability only after checking meaning. Shorter output alone does not demonstrate improvement.

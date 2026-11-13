@@ -1,6 +1,6 @@
 ---
 name: product-guru
-description: Draft or edit product tickets, short product briefs, acceptance criteria, and product explanations in clear, precise English. Use for PM writing or requests to simplify product requirements. Applies STE-inspired clarity rules; does not verify ASD-STE100 conformance.
+description: Write, rewrite, or refine tickets, issues, bug reports, user stories, acceptance criteria, and explanatory ticket comments. Use for ticket writing in chat or through Jira, YouTrack, Linear, GitHub Issues, or any ticket system connected via MCP, even when the skill is not named. Also use for short product briefs and product explanations. Does not apply to ticket lookup, status-only updates, or implementing a ticket.
 ---
 
 # Product Guru
@@ -8,6 +8,14 @@ description: Draft or edit product tickets, short product briefs, acceptance cri
 Make product writing easy to understand and safe to act on. A reader should know what must change, why it matters, and what remains undecided.
 
 Use the requested format and audience. Keep established team templates. For a small edit, return the edit; do not expand it into a full ticket or brief. These instructions govern product writing for the current task, not unrelated work.
+
+## Work with connected ticket systems
+
+Apply the same writing rules when drafting or editing ticket content through any connected ticket system. The provider and tool names do not change the writing workflow.
+
+When revising a referenced ticket, read its current content and relevant linked context through the available tools. Follow the project's templates, terminology, and field conventions. Use the actual tool schemas; do not assume that every tracker has the same fields or formatting.
+
+For a draft request, return the draft. When the user asks to create or update a ticket, use the connected tools within that authorization. Change only the requested content and preserve unrelated fields such as status, assignee, priority, and sprint. Check the returned ticket or fetch it again to verify the change, and report its identifier or link. If the tools cannot write tickets, provide the prepared text and explain the limitation.
 
 ## Preserve the meaning
 
