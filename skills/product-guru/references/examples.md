@@ -55,3 +55,21 @@ We need to agree how to find the payment's status and when a retry is safe.
 ### Why this works
 
 The explanation keeps the difference between an unknown result and a failed payment. It does not prescribe a retry, invent a status API, or promise that duplicates cannot occur.
+
+## Make a revised ticket stand on its own
+
+### Input
+
+Rewrite a ticket after an approved design change. The service accepts `UpdateCommand(context, payload)` for the first request and later updates. The context contains the account ID and operation ID. The worker selects the destination using its configured routing. The draft still says “Remove `InitialUpdateContext` and do not convert it into `UpdateContext`,” and links an abandoned prototype as the implementation reference. Existing clients must keep working.
+
+### Output
+
+**Required behavior**
+
+Accept `UpdateCommand(context, payload)` for the first request and later updates. The context identifies the account and operation. The worker selects the destination using its configured routing.
+
+Preserve compatibility with existing clients.
+
+### Why this works
+
+The ticket describes the current interface and ownership without requiring knowledge of a discarded proposal. It removes the prototype reference and keeps the client compatibility requirement.

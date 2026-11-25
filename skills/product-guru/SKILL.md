@@ -35,6 +35,26 @@ For a draft request, return the draft. When the user asks to create or update a 
 - Use bullets for separate requirements or checks, and numbered steps for an ordered process. Keep paragraphs focused on one subject.
 - Keep qualifications that affect decisions. Shorter text is not an improvement if it hides uncertainty or removes necessary detail.
 
+## Write for a reader who never saw the earlier design
+
+Describe the current problem, intended behavior, interfaces and ownership so the ticket stands on its own. A ticket is an implementation brief, not a record of the conversation that produced it.
+
+When a design changes, rewrite the affected sections in place. Remove discarded proposals, obsolete type/field names, resolved questions and comparisons that require knowledge of an abandoned design. Do not append correction paragraphs while leaving conflicting instructions elsewhere in the ticket. Explain the current concept and its purpose directly.
+
+Review the whole ticket, including headings, acceptance criteria, dependencies and links. Replace links that present an abandoned design as the implementation reference. Consolidate repeated handoff or revision notes into one current statement. Keep implementation/publication evidence concise and relevant to the current handoff.
+
+Preserve compatibility, migration, security and release requirements that still apply to real systems. Distinguish those operational requirements from an unimplemented proposal. Use ticket history for discarded design discussion unless the user explicitly requests a decision log or a historical comparison.
+
+## Maintain an existing ticket set
+
+When asked to align an epic or related tickets after a design change:
+
+- Discover the complete requested set, including paginated child issues, and read each ticket's current content before editing. Check the current contracts and ownership where the change crosses ticket boundaries.
+- Rewrite affected sections in place so each ticket has one coherent description of the current work. Remove discarded concepts, resolved questions, repeated revision notes and stale implementation references. Keep shared delivery evidence in the owning ticket and link to it from consumers.
+- Check the responsibilities, acceptance criteria and dependencies together. Component tickets should be independently verifiable at their agreed boundary; put connected acceptance tests in the ticket that owns the integration. Preserve the agreed scope and delivery order.
+- Leave unaffected tickets unchanged. Preserve status, assignee, priority, release information and other unrelated fields unless the user requests a change.
+- Verify saved content and check the set again for inconsistent instructions. Report which tickets were reviewed and changed, plus any concrete unresolved issue. Do not treat a phrase search alone as proof that the tickets are understandable.
+
 ## Resolve uncertainty without inventing scope
 
 Use relevant context already provided or available in authorized sources. Do not search unrelated systems or change external tickets just to draft text.
@@ -55,7 +75,7 @@ For examples of faithful rewrites and unresolved requirements, read [references/
 
 ## Check before returning
 
-Compare the draft with the source. Restore any lost conditions or distinctions. Remove unsupported additions. Check that each agreed acceptance criterion can be verified without guessing what success means. Replace vague pronouns and inconsistent terms.
+Compare the draft with the source. Restore any lost conditions or distinctions. Remove unsupported additions. Check that each agreed acceptance criterion can be verified without guessing what success means. Replace vague pronouns and inconsistent terms. Read the result as a new implementer: remove unexplained references to discarded designs and check that all sections describe the same current behavior.
 
 Return the requested artifact directly. Add questions or a short explanation only when they help the user make a decision. Do not attach a writing score or self-review checklist unless requested.
 

@@ -94,6 +94,20 @@ Keep the evaluation rubric out of the task prompt. Check each response against t
 
 **Pass:** Does not require Product Guru for the status-only action and does not rewrite any ticket content.
 
+## 14. Make a revised ticket understandable to a new reader
+
+**Request:** Rewrite a ticket after an approved design change. Use `UpdateCommand(context, payload)` for the first request and later updates. The context contains account and operation IDs. The worker selects the destination using configured routing. Existing clients must keep working. The draft mentions discarded `InitialUpdateContext` and a conversion step in its acceptance criteria, repeats correction notes under dependencies, and links an abandoned prototype as the implementation reference. Rewrite the ticket for an implementer who never saw that proposal.
+
+**Pass:** Describes the current command, context and routing ownership directly. Preserves existing-client compatibility. Removes discarded identifiers, conversion instructions, correction-note repetition and obsolete implementation references throughout the ticket. Does not append a design-history section or invent a replacement API. Does not erase genuine release or migration obligations.
+
+## 15. Maintain the complete epic without changing ownership
+
+**Setup:** A connected tracker contains an epic with children on two result pages. A component ticket's updated acceptance criteria can run with mocks. Its dependency notes still require the whole connected flow to pass. Another ticket owns that integration test. Some children contain obsolete interface names or conflicting owners; one ticket is on hold. The approved current contract and ownership are provided.
+
+**Request:** Align every ticket in this epic with the current design. Keep the agreed ownership and statuses.
+
+**Pass:** Reads both child-result pages and each ticket. Rewrites affected text as a coherent current brief, aligns ownership and integration-test responsibility with the approved decisions, preserves status/assignee/release fields and the on-hold instruction, leaves unaffected tickets unchanged, and verifies saved content. Reports reviewed and changed scope. Does not merely append corrections or claim completeness from a keyword scan.
+
 ## Judge the result
 
 Treat invented commitments and lost requirements as failures, even when the prose is fluent. Check whether a reader can identify the change, conditions, and unresolved decisions without guessing. Compare readability only after checking meaning. Shorter output alone does not demonstrate improvement.
